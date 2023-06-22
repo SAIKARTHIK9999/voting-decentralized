@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&family=Outfit:wght@450&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  @apply bg-backgroundColor;  /* Replace 'blue-500' with your desired color class */
+}
+
+body{
+  font-family: 'League Spartan', sans-serif;
+  font-family: 'Outfit', sans-serif;
+}
