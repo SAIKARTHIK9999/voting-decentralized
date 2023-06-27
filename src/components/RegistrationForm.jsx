@@ -2,6 +2,7 @@ import React from 'react'
 import {useForm} from 'react-hook-form'
 import {useNavigate} from 'react-router-dom'
 import { useState } from 'react'
+import { Navbar, Footer } from '../constants'
 import axios from 'axios'
 function RegistrationForm() {
     let [data, setData] = useState('')
@@ -35,21 +36,22 @@ function RegistrationForm() {
         }
         return false
     }
-  return (
-    <div className=''>
-    <p className="text-6xl text-center">Registration form</p>
+  return (<>
+    <Navbar />
+    <div className='mt-16'>
+    <p className="text-6xl text-center">Voter registration form</p>
     <div className='flex justify-center '>
-    <div className='bg-blue-200  mt-10 border border-none rounded-lg shadow-xl shadow-stone-700 mb-10 '>
+    <div className='bg-indigo-200  mt-10 border border-none rounded-lg shadow-xl shadow-stone-700 mb-10 '>
         <div className='max-p-5 text-2xl text-center'>
             <form action="" className='' onSubmit={handleSubmit(onFormSubmit)}>
             <div className='p-5'>
                 <p className='m-3 font-bold'>Name</p>
-                <input type="text rounded-md bg-transparent border-2 p-1 focus:outline-sky-950  focus:border-blue-200" name="name" id="1" 
+                <input type="text rounded-md bg-transparent border-2 p-1 focus:outline-sky-950  focus:border-indigo-200" name="name" id="1" 
                     {...register("name", {required:true})}/>
                 {errors.name?.type ==="required"&&<p className='text-red-500'>*Name is required</p>}
                 
                 <p className='m-3 font-bold'>Aadhar Number</p>
-                <input type="text rounded-md bg-transparent border-2 p-1 focus:outline-sky-950  focus:border-blue-200" name="username" id="2" 
+                <input type="text rounded-md bg-transparent border-2 p-1 focus:outline-sky-950  focus:border-indigo-200" name="username" id="2" 
                     {...register("username",{required:true, minLength:12, maxLength:12})}
                 />
                 {errors.username?.type ==="required"&& <p className='text-red-500'>*Invalid Aadhar number</p>}
@@ -57,13 +59,13 @@ function RegistrationForm() {
                 {errors.username?.type ==="maxLength"&& <p className='text-red-500'>*Aadhar number is 12 digits</p>}
 
                 <p className='m-3 font-bold'>Password</p>
-                <input type="password rounded-md bg-transparent border-2 p-1 focus:outline-sky-950  focus:border-blue-200" name="password" id="1" 
+                <input type="password rounded-md bg-transparent border-2 p-1 focus:outline-sky-950  focus:border-indigo-200" name="password" id="1" 
                     {...register("password", {required:true, minLength:9})}/>
                 {errors.name?.type ==="required"&&<p className='text-red-500'>*Password is required</p>}
                 {errors.password?.type ==="minLength"&& <p className='text-red-500'>*min 9 characters</p>}
 
                 <p className='m-3 font-bold'>Phone Number</p>
-                <input type="text rounded-md bg-transparent border-2 p-1 focus:outline-sky-950  focus:border-blue-200" name="phoneno" id="3" 
+                <input type="text rounded-md bg-transparent border-2 p-1 focus:outline-sky-950  focus:border-indigo-200" name="phoneno" id="3" 
                     {...register("phoneno",{required:true, minLength:10, maxLength:10})}/>
                 {errors.phoneno?.type ==="required" && <p className='text-red-500'>*Invlaid Phone number </p>}
                 {errors.phoneno?.type ==="minLength"&& <p className='text-red-500'>*Phone number is 10 digits</p>}
@@ -92,19 +94,19 @@ function RegistrationForm() {
                     {errors.gender?.type==="required"&& <p className='text-red-500'>*Gender required</p>}
                 </div>
                 <p className='m-3 font-bold'>State</p>
-                <input type="text rounded-md bg-transparent border-2 p-1 focus:outline-sky-950  focus:border-blue-200" name="state" id="5" 
+                <input type="text rounded-md bg-transparent border-2 p-1 focus:outline-sky-950  focus:border-indigo-200" name="state" id="5" 
                     {...register("state", {required:true})}/>
                 {errors.state?.type==="required"&& <p className='text-red-500'>*Invalid State</p>}
                 <p className='m-3 font-bold'>District</p>
-                <input type="text rounded-md bg-transparent border-2 p-1 focus:outline-sky-950  focus:border-blue-200"name="dis" id="6" 
+                <input type="text rounded-md bg-transparent border-2 p-1 focus:outline-sky-950  focus:border-indigo-200"name="dis" id="6" 
                     {...register("district",{required:true})}/>
                 {errors.district?.type==="required"&& <p className='text-red-500'>*Invalid District</p>}
                 <p className='m-3 font-bold'>Pincode</p>
-                <input type="text rounded-md bg-transparent border-2 p-1 focus:outline-sky-950  focus:border-blue-200"
+                <input type="text rounded-md bg-transparent border-2 p-1 focus:outline-sky-950  focus:border-indigo-200"
                  name="pin" id="" {...register("pincode",{required:true})} />
                 {errors.pincode?.type==="required"&& <p className='text-red-500'>*Invalid Pincode</p>}
                 <p className='m-3 font-bold'>Address</p>
-                <input type="text rounded-md bg-transparent border-2 p-1 focus:outline-sky-950  focus:border-blue-200" name="address" id="" 
+                <input type="text rounded-md bg-transparent border-2 p-1 focus:outline-sky-950  focus:border-indigo-200" name="address" id="" 
                     {...register("address",{required:true})}/>
                 {errors.address?.type==="required"&& <p className='text-red-500'>*Invalid Address</p>}
                 <p className='m-2 '>Attach Supporting Documents</p>
@@ -122,6 +124,7 @@ function RegistrationForm() {
     </div>
     </div>
     </div>
-  )
+    <Footer />
+    </>)
 }
 export default RegistrationForm
