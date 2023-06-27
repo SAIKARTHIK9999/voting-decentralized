@@ -1,11 +1,9 @@
 import React from 'react'
 import {useState} from 'react'
-import { useForm } from 'react-hook-form'
-import {Routes, Route, Link} from 'react-router-dom'
-import img1 from './components/images/img.png'
-import RegistrationForm from './components/RegistrationForm'
-import HomePage from './components/HomePage'
-function App() {
+import {useForm } from 'react-hook-form'
+import {Link} from 'react-router-dom'
+import img1 from './images/img.png'
+function LoginPage() {
     const [user,setUser] = useState('')
     const {register, handleSubmit, formState: {errors}} = useForm()
     const onFormSubmit = (userObj)=> {
@@ -13,6 +11,8 @@ function App() {
         setUser([...user, userObj])
         console.log(user)
     }
+
+
 
   return (
     <div className='bg-yellow-50 flex justify-center' >
@@ -54,20 +54,17 @@ function App() {
             className='border-2 rounded-md border-black mt-7 p-1 mb-5 pl-2 pr-2 bg-primaryButton hover:bg-stone-50 active:bg-sky-600 focus:outline-none focus:ring'
             type='submit' >Login</button>
         </div>
-        <div className=''>
         <div className='flex justify-center'>
-            <p className='mt-7 p-1 mb-5'>New User? Register</p>
-            <Link to='register'>here</Link>
-        </div>
+            <p className='mt-7  p-1'>New User? Register</p>
+            <Link to="/register" className='text-xl m-7 ml-2 hover:text-stone-50'>Here</Link> </div>
+       
+        <div className=''>
     </div>
     </form>
     </div>
     </div>
-    <Routes>
-        <Route path="/register" element={<RegistrationForm/>}/>
-    </Routes>
     </div>
   )
 }
 
-export default App;
+export default LoginPage;
