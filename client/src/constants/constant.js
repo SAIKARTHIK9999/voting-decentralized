@@ -1,44 +1,64 @@
-const contractAddress = "0x8B358ef18C2A953A76587Fcb2535deB169177A24";
-const contractAbi = [
+const contractAddress = "0x4c1Cbb8D258330ba7B97615eE32e20d319e423af";
+const contractAbi =    [
+ {
+  "inputs": [
     {
-      "inputs": [
-        {
-          "internalType": "string[]",
-          "name": "_candidateNames",
-          "type": "string[]"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_durationInMinutes",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "constructor"
+      "internalType": "string[]",
+      "name": "_candidateNames",
+      "type": "string[]"
     },
     {
-      "inputs": [
-        {
-          "internalType": "string",
-          "name": "_name",
-          "type": "string"
-        }
-      ],
-      "name": "addCandidate",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
+      "internalType": "uint256",
+      "name": "_durationInMinutes",
+      "type": "uint256"
+    }
+  ],
+  "stateMutability": "nonpayable",
+  "type": "constructor"
+},
+{
+  "inputs": [
+    {
+      "internalType": "string",
+      "name": "_name",
+      "type": "string"
+    }
+  ],
+  "name": "addCandidate",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+},
+{
+  "inputs": [
+    {
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }
+  ],
+  "name": "candidates",
+  "outputs": [
+    {
+      "internalType": "string",
+      "name": "name",
+      "type": "string"
     },
     {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "name": "candidates",
-      "outputs": [
+      "internalType": "uint256",
+      "name": "voteCount",
+      "type": "uint256"
+    }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+},
+{
+  "inputs": [],
+  "name": "getAllVotesOfCandiates",
+  "outputs": [
+    {
+      "components": [
         {
           "internalType": "string",
           "name": "name",
@@ -50,118 +70,98 @@ const contractAbi = [
           "type": "uint256"
         }
       ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "getAllVotesOfCandiates",
-      "outputs": [
-        {
-          "components": [
-            {
-              "internalType": "string",
-              "name": "name",
-              "type": "string"
-            },
-            {
-              "internalType": "uint256",
-              "name": "voteCount",
-              "type": "uint256"
-            }
-          ],
-          "internalType": "struct Voting.Candidate[]",
-          "name": "",
-          "type": "tuple[]"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "getRemainingTime",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "getVotingStatus",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_candidateIndex",
-          "type": "uint256"
-        }
-      ],
-      "name": "vote",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "name": "voters",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "votingEnd",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "votingStart",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
+      "internalType": "struct Voting.Candidate[]",
+      "name": "",
+      "type": "tuple[]"
     }
-  ]
+  ],
+  "stateMutability": "view",
+  "type": "function"
+},
+{
+  "inputs": [],
+  "name": "getRemainingTime",
+  "outputs": [
+    {
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+},
+{
+  "inputs": [],
+  "name": "getVotingStatus",
+  "outputs": [
+    {
+      "internalType": "bool",
+      "name": "",
+      "type": "bool"
+    }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+},
+{
+  "inputs": [
+    {
+      "internalType": "uint256",
+      "name": "_candidateIndex",
+      "type": "uint256"
+    }
+  ],
+  "name": "vote",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+},
+{
+  "inputs": [
+    {
+      "internalType": "address",
+      "name": "",
+      "type": "address"
+    }
+  ],
+  "name": "voters",
+  "outputs": [
+    {
+      "internalType": "bool",
+      "name": "",
+      "type": "bool"
+    }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+},
+{
+  "inputs": [],
+  "name": "votingEnd",
+  "outputs": [
+    {
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+},
+{
+  "inputs": [],
+  "name": "votingStart",
+  "outputs": [
+    {
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+}
+]
   
 export {contractAbi, contractAddress};
