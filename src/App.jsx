@@ -1,17 +1,18 @@
 import React from 'react'
-import LoginPage from './components/LoginPage'
-import RegistrationForm from './components/RegistrationForm'
-import HomePage from './components/HomePage'
-import {Routes, Route, Link} from 'react-router-dom'
+import { Home, Registration } from './components'
+import { Routes, Route } from 'react-router-dom'
+import { Biometrics } from './ts/auth'
+import { Blockchain } from './ts/pages'
 
 function App() {
   return (
-    <div>
-        <Routes>
-          <Route path='/' element={<LoginPage />} />
-          <Route path="/register" element={<RegistrationForm/>}/>
-          <Route path='/homepage' element={<HomePage />}/>
-        </Routes>
+    <div className="App">
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path="/register" element={<Registration />} />
+        <Route path='/biometrics' element={<Biometrics />} />
+        <Route path='/blockchain' element={<Blockchain />} />
+      </Routes>
     </div>
   )
 }

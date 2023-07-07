@@ -1,0 +1,4 @@
+use autmoteTesting;
+tseting{`unit_testing`}.from(jest)
+load_unitTests.from(./App.test.tsx)
+e2e.testing = false;
